@@ -14,9 +14,15 @@
         <img src="{{tempBasketballReults.vTeam.logo}}" height = "50">
         {{tempBasketballReults.vTeam.triCode}}
       </td>
-      <td>
-        {{tempBasketballReults.hTeam.score}} : {{tempBasketballReults.vTeam.score}}
-      </td>
+
+      <div *ngIf="tempBasketballReults.isGameActivated; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <td style="color: darkred">{{tempBasketballReults.hTeam.score}} : {{tempBasketballReults.vTeam.score}}</td>
+      </ng-template>
+      <ng-template #elseBlock>
+        <td>{{tempBasketballReults.hTeam.score}} : {{tempBasketballReults.vTeam.score}}</td>
+      </ng-template>
+
       <td>
         <img src="{{tempBasketballReults.hTeam.logo}}" height = "50">
         {{tempBasketballReults.hTeam.triCode}}
