@@ -4,7 +4,7 @@ import {Basketball} from "../../../../../common/live/basketball/general/basketba
 
 @Component({
   selector: 'app-basketball-result',
-  templateUrl: './basketball-result-list.component.html',
+  templateUrl: './basketball-result-listV2.component.html',
   styleUrls: ['./basketball-result.component.css']
 })
 export class BasketballResultComponent implements OnInit {
