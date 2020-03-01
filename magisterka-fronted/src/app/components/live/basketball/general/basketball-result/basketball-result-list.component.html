@@ -1,0 +1,29 @@
+<table class = "table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Visit Team</th>
+      <th>Result</th>
+      <th>Home Team</th>
+      <th>Game Detail</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let tempBasketballReults of basketballResults">
+      <td>
+        <img src="{{tempBasketballReults.vTeam.logo}}" height = "50">
+        {{tempBasketballReults.vTeam.triCode}}
+      </td>
+      <td>
+        {{tempBasketballReults.hTeam.score}} : {{tempBasketballReults.vTeam.score}}
+      </td>
+      <td>
+        <img src="{{tempBasketballReults.hTeam.logo}}" height = "50">
+        {{tempBasketballReults.hTeam.triCode}}
+      </td>
+      <td>
+        Button
+      </td>
+    </tr>
+  </tbody>
+</table>
