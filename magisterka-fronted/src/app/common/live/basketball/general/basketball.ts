@@ -8,4 +8,5 @@ export class Basketball {
   vTeam: VTeam;
   hTeam: HTeam;
   date: string;
+  gameId: string;
 }
