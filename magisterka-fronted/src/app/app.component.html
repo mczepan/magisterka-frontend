@@ -10,17 +10,10 @@
     <div class="menu-sidebar-content js-scrollbar1">
       <nav class="navbar-sidebar">
         <ul class="list-unstyled navbar-list">
-          <li>
-            <a href="#">Books</a>
-          </li>
-          <li>
-            <a href="#">Coffee Mugs</a>
-          </li>
-          <li>
-            <a href="#">Mouse Pads</a>
-          </li>
-          <li>
-            <a href="#">Luggage Tags</a>
+
+
+          <li *ngFor="let tempSportType of sportTypes">
+            <a href="type/{{tempSportType.strSport}}">{{tempSportType.strSport}}</a>
           </li>
         </ul>
       </nav>
@@ -43,6 +36,7 @@
                 Search
               </button>
             </form>
+            <!--
             <div class="cart-area d-n">
               <a href="shopping-detail.html">
                 <div class="total">19.22 <span> 2</span></div>
@@ -50,6 +44,7 @@
                    aria-hidden="true"></i>
               </a>
             </div>
+            -->
           </div>
           <div class="account-wrap"></div>
         </div>
@@ -68,8 +63,8 @@
 
 <footer>
   <ul>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">About Me</a></li>
+    <li><a href="#">Contact Me</a></li>
     <li><a href="#">Help</a></li>
   </ul>
 </footer>

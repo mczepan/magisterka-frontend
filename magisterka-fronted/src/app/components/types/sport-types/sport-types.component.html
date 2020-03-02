@@ -1,0 +1,22 @@
+<div class = "detail-section-center">
+  <div class = "container-fluid">
+  <img src="{{sportType.strSportThumb}}" class="detail-img">
+  <h3> Sport: {{sportType.strSport}}</h3>
+  <h3> Format: {{sportType.strFormat}}</h3>
+
+
+  <div *ngIf="sportType.provideLiveResult; then thenBlock"></div>
+  <ng-template #thenBlock>
+    <h3><a href="live/{{sportType.strSport}}">Scoreboard</a></h3>
+  </ng-template>
+  </div>
+</div>
+
+
+<div class = "detail-section">
+  <div class = "container-fluid">
+    <hr>
+    <p>{{sportType.strSportDescription}}</p>
+  </div>
+</div>
+

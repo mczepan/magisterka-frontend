@@ -7,9 +7,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {BaskteballService} from "./services/live/basketball/baskteball.service";
 import {BasketballNavbarComponent} from './components/live/basketball/navbar/basketball-navbar.component';
 import {RouterModule, Routes} from "@angular/router";
+import { SportTypesComponent } from './components/types/sport-types/sport-types.component';
 
 const routes: Routes = [
-  {path: 'live/:sport', component: BasketballResultComponent},
+  {path: 'type/:sport', component: SportTypesComponent},
   {path: 'live', component: BasketballResultComponent},
   {path: '', redirectTo: 'live', pathMatch: 'full'},
   {path: '**', redirectTo: 'live', pathMatch: 'full'}
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     BasketballResultComponent,
-    BasketballNavbarComponent
+    BasketballNavbarComponent,
+    SportTypesComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
