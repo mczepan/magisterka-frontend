@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Basketball} from "../../common/live/basketball/general/basketball";
-import {map} from "rxjs/operators";
-import {SportTypes} from "../../common/types/sport-types";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Basketball} from '../../common/live/basketball/general/basketball';
+import {map} from 'rxjs/operators';
+import {SportTypes} from '../../common/types/sport-types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SportTypesService {
 
-  private baseUrl = "http://localhost:8080/api/sport/types";
+  private baseUrl = 'http://localhost:8080/api/sport/types';
 
   constructor(private httpClient: HttpClient) { }
 

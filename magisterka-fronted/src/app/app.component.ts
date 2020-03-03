@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {SportTypes} from "./common/types/sport-types";
 import {SportTypesService} from "./services/types/sport-types.service";
+import {NgForm} from "@angular/forms";
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import {SportTypesService} from "./services/types/sport-types.service";
 export class AppComponent implements OnInit{
   title = 'ang-test';
   sportTypes: SportTypes[];
+  isSubmitted = false;
 
   constructor(private sportTypesService: SportTypesService) {
   }
@@ -24,6 +27,15 @@ export class AppComponent implements OnInit{
         this.sportTypes = data;
       }
     )
+  }
+
+  submitForm(form: NgForm) {
+    this.isSubmitted = true;
+    if(!form.valid) {
+      return false;
+    } else {
+      alert(JSON.stringify(form.value))
+    }
   }
 
 }

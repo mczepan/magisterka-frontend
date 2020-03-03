@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SportTypes} from "../../../common/types/sport-types";
 import {SportTypesService} from "../../../services/types/sport-types.service";
 import {ActivatedRoute} from "@angular/router";
-import {SportTypes} from "../../../common/types/sport-types";
 
 @Component({
   selector: 'app-sport-types',

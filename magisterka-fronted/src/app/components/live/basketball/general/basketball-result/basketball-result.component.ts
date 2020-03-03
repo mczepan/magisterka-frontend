@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BaskteballService} from "../../../../../services/live/basketball/baskteball.service";
-import {Basketball} from "../../../../../common/live/basketball/general/basketball";
+import {BaskteballService} from '../../../../../services/live/basketball/baskteball.service';
+import {Basketball} from '../../../../../common/live/basketball/general/basketball';
 
 @Component({
   selector: 'app-basketball-result',

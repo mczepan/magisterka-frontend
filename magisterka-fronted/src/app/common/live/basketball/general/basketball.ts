@@ -1,5 +1,5 @@
-import {VTeam} from "./v-team";
-import {HTeam} from "./h-team";
+import {VTeam} from './v-team';
+import {HTeam} from './h-team';
 
 export class Basketball {
 
