@@ -286,6 +286,7 @@ input.au-input.au-input-xl{
   position:relative;
   right:0;
   min-width:95px;
+  margin-right:15px;
   color:#fff;
   border:1px solid #205b8d;
   -webkit-border-radius:3px;
@@ -767,7 +768,11 @@ table.table.table-bordered th{
 }
 .detail-section{
   margin-top:50px;
-  margin-left: 50px
+  margin-left: 15px
+}
+
+.detail-section-img{
+  width: 30%;
 }
 
 .detail-section-center {
@@ -775,8 +780,18 @@ table.table.table-bordered th{
   margin-left: 450px;
 }
 
+.detail-section-team-center {
+  margin-top:100px;
+  margin-left: 350px;
+}
 .detail-img{
   width: 50%;
+}
+.detail-img-team{
+  width: 30%;
+}
+.detail-team-name{
+  margin-left: 175px;
 }
 /**/
 
@@ -1061,6 +1076,7 @@ footer ul li{
     border-radius:0!important;
     margin-right:0
   }
+
   .cart-area.d-b{
     display:block
   }

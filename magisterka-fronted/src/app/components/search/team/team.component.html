@@ -1,11 +1,70 @@
-<p>team works!</p>
-<p>team works!</p>
-<p>team works!</p>
-<p>team works!</p>
-<p>team works!</p>
-<p>team works!</p>
-<p>team works!</p>
+<div class="detail-section-team-center">
+  <div class="container-fluid">
+    <img src="{{team[0].strTeamBadge}}" class="detail-img-team">
+    <img src="{{team[0].strTeamJersey}}" class="detail-img-team">
+    <h3 class="detail-team-name">{{team[0].strTeam}}</h3>
+  </div>
+</div>
 
+<div class="detail-section">
+  <div class="container-fluid">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th>Team</th>
+        <th>Sport Type</th>
+        <th>League</th>
+        <th>Stadium</th>
+        <th>Website</th>
+        <th>Facebook</th>
+        <th>Twitter</th>
+        <th>Instagram</th>
+        <th>YouTube</th>
+
+      </tr>
+      </thead>
+
+      <tbody>
+      <td>
+        {{team[0].strTeam}}
+      </td>
+      <td>
+        {{team[0].strSport}}
+      </td>
+      <td>
+        {{team[0].strLeague}}
+      </td>
+      <td>
+        {{team[0].strStadium}}
+      </td>
+      <td>
+        <a href="{{'http://' +team[0].strWebsite}}">Website</a>
+      </td>
+      <td>
+        <a href="{{'http://' +team[0].strFacebook}}">Facebook</a>
+      </td>
+      <td>
+        <a href="{{'http://' +team[0].strTwitter}}">Twitter</a>
+      </td>
+      <td>
+        <a href="{{'http://' +team[0].strInstagram}}">Instagram</a>
+      </td>
+      <td>
+        <a href="{{'http://' +team[0].strYoutube}}">YouTube</a>
+      </td>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="detail-section">
+  <div class="container-fluid">
+    <h3>Description</h3>
+    <hr>
+    <p>{{team[0].strDescriptionEN}}</p>
+  </div>
+</div>
 
 
 

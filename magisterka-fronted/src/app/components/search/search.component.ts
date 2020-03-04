@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  sportType = 'player';
+  sportType = 'players';
 
   constructor(private router: Router) { }
 
@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
 
 
   doSerach(value: string) {
-    console.log(`value=${value}`);
     this.router.navigateByUrl(`/search/${this.sportType}/${value}`);
 
   }

@@ -1,1 +1,70 @@
-<p>player works!</p>
+<div class="detail-section-center">
+  <div class="container-fluid">
+    <img src="{{player[0].strThumb}}" class="detail-img">
+    <h3>{{player[0].strPlayer}}</h3>
+    <h4>Team: {{player[0].strTeam}}</h4>
+  </div>
+</div>
+
+<div class="detail-section">
+  <div class="container-fluid">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th>Team</th>
+        <th>Sport Type</th>
+        <th>Nationality</th>
+        <th>Date born</th>
+        <th>Number</th>
+        <th>Date Signed</th>
+        <th>Posistion</th>
+        <th>Facebook</th>
+        <th>Twitter</th>
+        <th>Instagram</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <td>
+        {{player[0].strTeam}}
+      </td>
+      <td>
+        {{player[0].strSport}}
+      </td>
+      <td>
+        {{player[0].strNationality}}
+      </td>
+      <td>
+        {{player[0].dateBorn}}
+      </td>
+      <td>
+        {{player[0].strNumber}}
+      </td>
+      <td>
+        {{player[0].dateSigned}}
+      </td>
+      <td>
+        {{player[0].strPosition}}
+      </td>
+      <td>
+        <a href="{{'http://' +player[0].strFacebook}}">Facebook</a>
+      </td>
+      <td>
+        <a href="{{'http://' +player[0].strTwitter}}">Twitter</a>
+      </td>
+      <td>
+        <a href="{{'http://' +player[0].strInstagram}}">Instagram</a>
+      </td>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="detail-section">
+  <div class="container-fluid">
+    <h3>Description</h3>
+    <hr>
+    <p>{{player[0].strDescriptionEN}}</p>
+  </div>
+</div>

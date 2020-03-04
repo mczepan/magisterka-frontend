@@ -10,26 +10,40 @@ import {Player} from "../../common/types/player/player";
 })
 export class SearchService {
 
-  private baseUrl = 'http://localhost:8080/api/search'
+  private baseUrl = 'http://localhost:8080/api/search';
 
   constructor(private httpClient: HttpClient) {
   }
 
   searchTeams(theKeyword: string): Observable<Team[]> {
-    const searchUrl = `${this.baseUrl}/team/${theKeyword}`;
+    const searchUrl = `${this.baseUrl}/teams/${theKeyword}`;
 
-    console.log(searchUrl)
     return this.httpClient.get<GetTeamResponse>(searchUrl).pipe(
       map(response => response.teams)
     )
   }
 
   searchPlayers(theKeyword: string): Observable<Player[]> {
-    const searchUrl = `${this.baseUrl}/player/${theKeyword}`;
-    console.log(searchUrl)
+    const searchUrl = `${this.baseUrl}/players/${theKeyword}`;
 
-    return this.httpClient.get<GetPlayerResponse>(searchUrl).pipe(
+    return this.httpClient.get<GetPlayersResponse>(searchUrl).pipe(
       map(response => response.player)
+    )
+  }
+
+  getPlayer(thePlayerId: string) {
+    const searchUrl = `${this.baseUrl}/player/${thePlayerId}`;
+
+    return this.httpClient.get<GetSinglePlayerResponse>(searchUrl).pipe(
+      map(response => response.players)
+    )
+  }
+
+  getTeam(theTeamId: string) {
+    const searchUrl = `${this.baseUrl}/team/${theTeamId}`;
+
+    return this.httpClient.get<GetTeamResponse>(searchUrl).pipe(
+      map(response => response.teams)
     )
   }
 }
@@ -38,6 +52,12 @@ interface GetTeamResponse {
   teams: Team[];
 }
 
-interface GetPlayerResponse {
+interface GetPlayersResponse {
   player: Player[];
 }
+
+interface GetSinglePlayerResponse {
+  players: Player[];
+}
+
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from "../../../services/search/search.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Team} from "../../../common/types/team/team";
 
 @Component({
@@ -12,7 +12,8 @@ export class TeamListComponent implements OnInit {
 
   teams: Team[];
   constructor(private searchService: SearchService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -28,5 +29,9 @@ export class TeamListComponent implements OnInit {
         this.teams = data;
       }
     )
+  }
+
+  getTeamDetails(idTeam: string) {
+    this.router.navigateByUrl(`/search/team/${idTeam}`);
   }
 }

@@ -7,6 +7,8 @@ export class Player {
   strSport: string;
   dateBorn: string;
   strWage: string;
+  strNumber: string;
+  dateSigned: string;
   strBirthLocation: string;
   strDescriptionEN: string;
   strGender: string;

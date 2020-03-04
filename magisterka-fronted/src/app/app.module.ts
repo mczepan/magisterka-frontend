@@ -16,10 +16,10 @@ import {TeamListComponent} from './components/search/team-list/team-list.compone
 import {PlayerListComponent} from './components/search/player-list/player-list.component';
 
 const routes: Routes = [
-  {path: 'search/team/:keyword', component: TeamListComponent},
-  {path: 'search/team', component: TeamListComponent},
-  {path: 'search/player/:keyword', component: PlayerListComponent},
-  {path: 'search/player', component: PlayerListComponent},
+  {path: 'search/teams/:keyword', component: TeamListComponent},
+  {path: 'search/team/:id', component: TeamComponent},
+  {path: 'search/players/:keyword', component: PlayerListComponent},
+  {path: 'search/player/:id', component: PlayerComponent},
   {path: 'type/:sport', component: SportTypesComponent},
   {path: 'live/:sport', component: BasketballResultComponent},
   {path: 'live', component: BasketballResultComponent},

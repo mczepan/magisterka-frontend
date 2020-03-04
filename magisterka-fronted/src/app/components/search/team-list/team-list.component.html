@@ -1,7 +1,37 @@
-<div class = "main-content">
-<div class = "section-content section-content-p40">
-  <p *ngFor="let tempTeam of teams">
-    {{tempTeam.strTeam}}
-  </p>
+<div class="main-content">
+  <div class="section-content section-content-p40">
+    <div class="container-fluid">
+
+      <table class = "table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Team Name</th>
+          <th>Sport Type</th>
+          <th>Logo</th>
+          <th>Team Detail</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let tempTeam of teams">
+          <td>
+            {{tempTeam.strTeam}}
+          </td>
+          <td>
+            {{tempTeam.strSport}}
+          </td>
+          <td>
+            <img src="{{tempTeam.strTeamBadge}}" height = "50" width="50">
+          </td>
+          <td>
+            <button (click)=getTeamDetails(tempTeam.idTeam) class=au-btn-submit>
+              Details
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-</div>
+

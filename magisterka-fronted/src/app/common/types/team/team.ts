@@ -14,4 +14,6 @@ export class Team {
   intFormedYear: string;
   strSport: string;
   strTeamBadge: string;
+  strYoutube; string;
+  strTeamJersey: string;
 }
