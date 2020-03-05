@@ -28,6 +28,5 @@ export class PlayerComponent implements OnInit {
         this.player = data;
       }
     )
-    console.log(this.player[0].strFacebook);
   }
 }

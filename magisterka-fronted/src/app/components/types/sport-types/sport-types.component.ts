@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SportTypesComponent implements OnInit {
 
-  sportType: SportTypes;
+  sportType: SportTypes = new SportTypes();
 
   constructor(private sportTypesService: SportTypesService,
               private route: ActivatedRoute) { }

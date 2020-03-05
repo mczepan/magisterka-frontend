@@ -784,15 +784,36 @@ table.table.table-bordered th{
   margin-top:100px;
   margin-left: 350px;
 }
+.detail-section-team-center-nba {
+  margin-top:100px;
+  margin-left:500px;
+}
 .detail-img{
   width: 50%;
 }
 .detail-img-team{
   width: 30%;
 }
+.detail-img-team-nba{
+  width: 15%;
+}
 .detail-team-name{
   margin-left: 175px;
 }
+.container-fluid-nba{
+  display: inline-block;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+.vs-label{
+  font-size: 25px;
+  color: #000000;
+  font-weight: bold;
+  width: 50px;
+  display: inline-block;
+  margin-left: 25px;
+}
+
 /**/
 
 /*

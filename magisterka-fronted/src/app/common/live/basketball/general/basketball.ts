@@ -7,6 +7,6 @@ export class Basketball {
   clock: number;
   vTeam: VTeam;
   hTeam: HTeam;
-  date: string;
+  homeStartDate: string;
   gameId: string;
 }

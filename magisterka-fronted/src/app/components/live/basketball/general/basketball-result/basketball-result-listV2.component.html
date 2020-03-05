@@ -32,7 +32,9 @@
             {{tempBasketballReults.hTeam.triCode}}
           </td>
           <td>
-            Button
+            <button (click)=goToGameDetails(tempBasketballReults.gameId,tempBasketballReults.homeStartDate) class=au-btn-submit>
+              Details
+            </button>
           </td>
         </tr>
         </tbody>

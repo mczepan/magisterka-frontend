@@ -14,6 +14,7 @@ import {TeamComponent} from './components/search/team/team.component';
 import {SearchComponent} from './components/search/search.component';
 import {TeamListComponent} from './components/search/team-list/team-list.component';
 import {PlayerListComponent} from './components/search/player-list/player-list.component';
+import { DetailBasketballComponent } from './components/live/basketball/detail/detail-basketball/detail-basketball.component';
 
 const routes: Routes = [
   {path: 'search/teams/:keyword', component: TeamListComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'search/players/:keyword', component: PlayerListComponent},
   {path: 'search/player/:id', component: PlayerComponent},
   {path: 'type/:sport', component: SportTypesComponent},
+  {path: 'live/basketball/:date/:game-id', component: DetailBasketballComponent},
   {path: 'live/:sport', component: BasketballResultComponent},
   {path: 'live', component: BasketballResultComponent},
   {path: '', redirectTo: 'live', pathMatch: 'full'},
@@ -37,7 +39,8 @@ const routes: Routes = [
     TeamComponent,
     SearchComponent,
     TeamListComponent,
-    PlayerListComponent
+    PlayerListComponent,
+    DetailBasketballComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

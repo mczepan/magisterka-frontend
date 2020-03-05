@@ -1,0 +1,62 @@
+<div class="detail-section-team-center-nba">
+  <div class="container-fluid">
+    <img src="{{boxscore.basicGameData.vTeam.logoPath}}" class="detail-img-team-nba">
+    <label class="vs-label">VS</label>
+    <img src="{{boxscore.basicGameData.hTeam.logoPath}}" class="detail-img-team-nba">
+  </div>
+</div>
+
+
+<div class="container-fluid-nba">
+  <h3 class="detail-team-name">{{boxscore.basicGameData.arena.name}}, {{boxscore.basicGameData.arena.city}},
+    {{boxscore.basicGameData.startTimeUTC | date: 'long'}}</h3>
+</div>
+
+<hr>
+
+
+<div class="detail-section">
+  <div class="container-fluid">
+    <table class = "table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th>Team</th>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th>Q4</th>
+        <th>SUM</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td>
+          <h4>{{boxscore.basicGameData.vTeam.triCode}}</h4>
+        </td>
+        <td *ngFor="let tempResult of boxscore.basicGameData.vTeam.linescore">
+          {{tempResult.score}}
+        </td>
+        <td>
+          <h4>{{boxscore.basicGameData.vTeam.score}}</h4>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h4>{{boxscore.basicGameData.hTeam.triCode}}</h4>
+        </td>
+        <td *ngFor="let tempResult of boxscore.basicGameData.hTeam.linescore">
+          {{tempResult.score}}
+        </td>
+        <td>
+          <h4>{{boxscore.basicGameData.hTeam.score}}</h4>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <a routerLink="/live/basketball" class="mt-5">Back to Scoreboard</a>
+  </div>
+</div>
+
+
