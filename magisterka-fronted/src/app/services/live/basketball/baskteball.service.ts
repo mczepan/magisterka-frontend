@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {Boxscore} from "../../../common/live/basketball/detail/boxscore";
 import {BasicGameData} from "../../../common/live/basketball/detail/basic-game-data";
+import {Standings} from "../../../common/table/basketball/standings";
 
 
 @Injectable({
@@ -13,6 +14,7 @@ import {BasicGameData} from "../../../common/live/basketball/detail/basic-game-d
 export class BaskteballService {
 
   private baseUrl = 'http://localhost:8080/api/live/basketball';
+  private baseUrlTable = 'http://localhost:8080/api/sport/league/table/nba';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,6 +27,10 @@ export class BaskteballService {
   getBasketballGameDetails(theDate: string,theGameID:string): Observable<Boxscore> {
     const detailUrl = `${this.baseUrl}/${theDate}/${theGameID}`;
     return this.httpClient.get<Boxscore>(detailUrl);
+  }
+
+  getBasketballStandings(): Observable<Standings> {
+    return this.httpClient.get<Standings>(this.baseUrlTable);
   }
 }
 

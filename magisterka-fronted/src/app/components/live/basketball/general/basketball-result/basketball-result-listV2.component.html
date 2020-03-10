@@ -21,10 +21,10 @@
 
           <div *ngIf="tempBasketballReults.isGameActivated; then thenBlock else elseBlock"></div>
           <ng-template #thenBlock>
-            <td style="color: red">{{tempBasketballReults.hTeam.score}} : {{tempBasketballReults.vTeam.score}}</td>
+            <td style="color: red">{{tempBasketballReults.vTeam.score}} : {{tempBasketballReults.hTeam.score}}</td>
           </ng-template>
           <ng-template #elseBlock>
-            <td>{{tempBasketballReults.hTeam.score}} : {{tempBasketballReults.vTeam.score}}</td>
+            <td>{{tempBasketballReults.vTeam.score}} : {{tempBasketballReults.hTeam.score}}</td>
           </ng-template>
 
           <td>

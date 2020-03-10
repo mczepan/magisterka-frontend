@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {SportTypesService} from "../../../../../services/types/sport-types.service";
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BaskteballService} from "../../../../../services/live/basketball/baskteball.service";
 import {Boxscore} from "../../../../../common/live/basketball/detail/boxscore";
-import {BasicGameData} from "../../../../../common/live/basketball/detail/basic-game-data";
 
 @Component({
   selector: 'app-detail-basketball',
