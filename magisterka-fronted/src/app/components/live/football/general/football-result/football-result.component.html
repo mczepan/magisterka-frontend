@@ -1,0 +1,86 @@
+<div class="main-content">
+  <div class="section-content section-content-p40">
+    <div class="container-fluid">
+      <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+          <th>League</th>
+          <th>Home Team</th>
+          <th>Result</th>
+          <th>Time</th>
+          <th>Visit Team</th>
+          <th>Game Detail</th>
+        </tr>
+        </thead>    <!--
+        <tbody>
+        <td>
+          <h6>{{footballResults.League}}</h6>
+        </td>
+        <td>
+          {{footballResults.HomeTeam}}
+        </td>
+        <div *ngIf="footballResults.Time != 'NOT'; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <td style="color: red">{{footballResults.HomeGoals}} : {{footballResults.AwayGoals}}</td>
+        </ng-template>
+        <ng-template #elseBlock>
+          <td>{{footballResults.HomeGoals}} : {{footballResults.AwayGoals}}</td>
+        </ng-template>
+
+        <div *ngIf="footballResults.Time != 'Not started' || footballResults.Time != 'Postponed'; then thenBlock2 else elseBlock2"></div>
+        <ng-template #thenBlock2>
+          <td style="color: red">{{footballResults.Time}}</td>
+        </ng-template>
+        <ng-template #elseBlock2>
+          <td>{{footballResults.Time}}</td>
+        </ng-template>
+        <td>
+          {{footballResults.AwayTeam}}
+        </td>
+        <td>
+          <button (click)=goToGameDetails(footballResults) class=au-btn-submit>
+            Details
+          </button>
+        </td>
+        </tbody>        -->
+
+        <tbody>
+        <tr *ngFor="let tempFootballReults of footballResults">
+          <td>
+            <h6>{{tempFootballReults.League}}</h6>
+          </td>
+          <td>
+            {{tempFootballReults.HomeTeam}}
+          </td>
+
+          <div *ngIf="tempFootballReults.Time != 'Not started' && tempFootballReults.Time != 'Postponed'; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+            <td style="color: red">{{tempFootballReults.HomeGoals}} : {{tempFootballReults.AwayGoals}}</td>
+          </ng-template>
+          <ng-template #elseBlock>
+            <td>{{tempFootballReults.HomeGoals}} : {{tempFootballReults.AwayGoals}}</td>
+          </ng-template>
+
+          <div *ngIf="tempFootballReults.Time != 'Not started' && tempFootballReults.Time != 'Postponed'; then thenBlock2 else elseBlock2"></div>
+          <ng-template #thenBlock2>
+            <td style="color: red">{{tempFootballReults.Time}}</td>
+          </ng-template>
+          <ng-template #elseBlock2>
+            <td>{{tempFootballReults.Time}}</td>
+          </ng-template>
+
+          <td>
+            {{tempFootballReults.AwayTeam}}
+          </td>
+          <td>
+            <button (click)=goToGameDetails(tempFootballReults) class=au-btn-submit>
+              Details
+            </button>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

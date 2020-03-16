@@ -16,8 +16,11 @@ import {TeamListComponent} from './components/search/team-list/team-list.compone
 import {PlayerListComponent} from './components/search/player-list/player-list.component';
 import { DetailBasketballComponent } from './components/live/basketball/detail/detail-basketball/detail-basketball.component';
 import { BasketballTableComponent } from './components/table/basketball/basketball-table/basketball-table.component';
+import { BasketballTeamsComponent } from './components/table/basketball/basketball-teams/basketball-teams.component';
+import { FootballResultComponent } from './components/live/football/general/football-result/football-result.component';
 
 const routes: Routes = [
+  {path: 'teams/basketball', component: BasketballTeamsComponent},
   {path: 'table/basketball', component: BasketballTableComponent},
   {path: 'search/teams/:keyword', component: TeamListComponent},
   {path: 'search/team/:id', component: TeamComponent},
@@ -25,6 +28,7 @@ const routes: Routes = [
   {path: 'search/player/:id', component: PlayerComponent},
   {path: 'type/:sport', component: SportTypesComponent},
   {path: 'live/basketball/:date/:game-id', component: DetailBasketballComponent},
+  {path: 'live/Soccer', component: FootballResultComponent},
   {path: 'live/:sport', component: BasketballResultComponent},
   {path: 'live', component: BasketballResultComponent},
   {path: '', redirectTo: 'live', pathMatch: 'full'},
@@ -43,7 +47,9 @@ const routes: Routes = [
     TeamListComponent,
     PlayerListComponent,
     DetailBasketballComponent,
-    BasketballTableComponent
+    BasketballTableComponent,
+    BasketballTeamsComponent,
+    FootballResultComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
