@@ -18,6 +18,7 @@ import { DetailBasketballComponent } from './components/live/basketball/detail/d
 import { BasketballTableComponent } from './components/table/basketball/basketball-table/basketball-table.component';
 import { BasketballTeamsComponent } from './components/table/basketball/basketball-teams/basketball-teams.component';
 import { FootballResultComponent } from './components/live/football/general/football-result/football-result.component';
+import { FootballDetailComponent } from './components/live/football/detail/football-detail/football-detail.component';
 
 const routes: Routes = [
   {path: 'teams/basketball', component: BasketballTeamsComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'search/player/:id', component: PlayerComponent},
   {path: 'type/:sport', component: SportTypesComponent},
   {path: 'live/basketball/:date/:game-id', component: DetailBasketballComponent},
+  {path: 'live/soccer/details/:id', component: FootballDetailComponent},
   {path: 'live/Soccer', component: FootballResultComponent},
   {path: 'live/:sport', component: BasketballResultComponent},
   {path: 'live', component: BasketballResultComponent},
@@ -49,7 +51,8 @@ const routes: Routes = [
     DetailBasketballComponent,
     BasketballTableComponent,
     BasketballTeamsComponent,
-    FootballResultComponent
+    FootballResultComponent,
+    FootballDetailComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

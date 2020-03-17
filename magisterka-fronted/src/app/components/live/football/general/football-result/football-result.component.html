@@ -5,6 +5,7 @@
         <thead class="thead-light">
         <tr>
           <th>League</th>
+          <th>Date</th>
           <th>Home Team</th>
           <th>Result</th>
           <th>Time</th>
@@ -45,15 +46,20 @@
         </tbody>        -->
 
         <tbody>
-        <tr *ngFor="let tempFootballReults of footballResults">
+        <tr *ngFor="let tempFootballReults of footballResults; let i = index" [attr.data-index]="i">
           <td>
             <h6>{{tempFootballReults.League}}</h6>
           </td>
           <td>
-            {{tempFootballReults.HomeTeam}}
+            {{tempFootballReults.Date| date: 'long'}}
+          </td>
+          <td>
+            <h6>{{tempFootballReults.HomeTeam}}</h6>
           </td>
 
-          <div *ngIf="tempFootballReults.Time != 'Not started' && tempFootballReults.Time != 'Postponed'; then thenBlock else elseBlock"></div>
+          <div *ngIf="tempFootballReults.Time != 'Not started' &&
+                      tempFootballReults.Time != 'Postponed' &&
+                      tempFootballReults.Time != 'Finished'; then thenBlock else elseBlock"></div>
           <ng-template #thenBlock>
             <td style="color: red">{{tempFootballReults.HomeGoals}} : {{tempFootballReults.AwayGoals}}</td>
           </ng-template>
@@ -61,7 +67,13 @@
             <td>{{tempFootballReults.HomeGoals}} : {{tempFootballReults.AwayGoals}}</td>
           </ng-template>
 
-          <div *ngIf="tempFootballReults.Time != 'Not started' && tempFootballReults.Time != 'Postponed'; then thenBlock2 else elseBlock2"></div>
+          <td>
+            <h6>{{tempFootballReults.AwayTeam}}</h6>
+          </td>
+
+          <div *ngIf="tempFootballReults.Time != 'Not started' &&
+                      tempFootballReults.Time != 'Postponed' &&
+                      tempFootballReults.Time != 'Finished'; then thenBlock2 else elseBlock2"></div>
           <ng-template #thenBlock2>
             <td style="color: red">{{tempFootballReults.Time}}</td>
           </ng-template>
@@ -70,10 +82,7 @@
           </ng-template>
 
           <td>
-            {{tempFootballReults.AwayTeam}}
-          </td>
-          <td>
-            <button (click)=goToGameDetails(tempFootballReults) class=au-btn-submit>
+            <button (click)=goToGameDetails(i) class=au-btn-submit>
               Details
             </button>
           </td>

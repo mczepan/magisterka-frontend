@@ -786,6 +786,11 @@ table.table.table-bordered th{
   margin-top:100px;
   margin-left: 350px;
 }
+
+.detail-section-team-center-soccer {
+  margin-top:100px;
+  margin-left: 200px;
+}
 .detail-section-team-center-nba {
   margin-top:100px;
   margin-left:500px;
@@ -802,9 +807,26 @@ table.table.table-bordered th{
 .detail-team-name{
   margin-left: 175px;
 }
+.detail-team-name-soccer{
+  display: inline-block;
+  margin-left: 395px;
+}
+.detail-section-space{
+  word-spacing: 10px;
+}
 .container-fluid-nba{
   display: inline-block;
   margin-left: 70px;
+  margin-top: 30px;
+}
+p-soccer{
+  display:inline;
+  margin-left: 40px;
+
+}
+.container-fluid-soccer{
+  display: inline-block;
+  margin-left: 25px;
   margin-top: 30px;
 }
 .vs-label{

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {Basketball} from "../../../common/live/basketball/general/basketball";
 import {map} from "rxjs/operators";
@@ -19,10 +19,23 @@ export class FootballService {
     return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
       map(response => response.teams.Match));
   }
+
+  getFootballGameDetails(theGameId: number): Observable<Football> {
+    const matchUrl = `${this.baseUrl}/${theGameId}`;
+
+    return this.httpClient.get<GetResponseGameDetails>(matchUrl).pipe(
+      map(response => response.teams.Match[0]));
+  }
 }
 
 interface GetResponse {
   teams: {
     Match: Football[]
+  };
+}
+
+interface GetResponseGameDetails {
+  teams: {
+    Match: Football
   };
 }
