@@ -6,8 +6,91 @@
 </div>
 <hr>
 <div class="container-fluid-nba">
-  <h3 class = "detail-team-name-soccer">{{match.HomeTeam}}
+  <h3 class = "detail-team-name-soccer" > {{match.HomeTeam}}
   - {{match.AwayTeam}}</h3>
+</div>
+
+<div class="detail-section">
+  <div class="container-fluid">
+    <table border="3" class = "table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <td></td>
+        <th scope="col">{{match.HomeTeam}}</th>
+        <th scope="col">{{match.AwayTeam}}</th>
+        <th scope="col">Time</th>
+
+      </tr>
+      </thead>
+      <tbody class="table-striped">
+        <tr >
+          <th scope="row" >Score</th>
+          <td><h4>{{match.HomeGoals}}</h4></td>
+          <td><h4>{{match.AwayGoals}}</h4></td>
+          <td><h4>{{match.Time}}</h4></td>
+        </tr>
+        <tr>
+          <th scope="row">Goal Details</th>
+          <td>{{match.HomeGoalDetails}}</td>
+          <td>{{match.AwayGoalDetails}}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td><h4></h4></td>
+          <td><h4></h4></td>
+        </tr>
+        <tr>
+          <th scope="row">Yellow Cards</th>
+          <td>{{match.HomeTeamYellowCardDetails}}</td>
+          <td>{{match.AwayTeamYellowCardDetails}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Red Cards</th>
+          <td>{{match.HomeTeamRedCardDetails}}</td>
+          <td>{{match.AwayTeamRedCardDetails}}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td><h4></h4></td>
+          <td><h4></h4></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td><h4>Lineup</h4></td>
+          <td><h4>Lineup</h4></td>
+        </tr>
+        <tr>
+          <th scope="row">Goalkeeper</th>
+          <td>{{match.HomeLineupGoalkeeper}}</td>
+          <td>{{match.AwayLineupGoalkeeper}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Defense</th>
+          <td>{{match.HomeLineupDefense}}</td>
+          <td>{{match.AwayLineupDefense}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Midfield</th>
+          <td>{{match.HomeLineupMidfield}}</td>
+          <td>{{match.AwayLineupMidfield}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Forward</th>
+          <td>{{match.HomeLineupForward}}</td>
+          <td>{{match.AwayLineupForward}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Substitutes</th>
+          <td>{{match.HomeLineupSubstitutes}}</td>
+          <td>{{match.AwayLineupSubstitutes}}</td>
+        </tr>
+        <th scope="row">Substitutes Details</th>
+        <td>{{match.HomeSubDetails}}</td>
+        <td>{{match.AwaySubDetails}}</td>
+      </tbody>
+    </table>
+    <a routerLink="/live/Soccer" class="mt-5">Back to Scoreboard</a>
+  </div>
 </div>
 
 

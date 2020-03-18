@@ -11,6 +11,7 @@ export class Football {
   HomeGoals: string;
   AwayGoals: string;
   HomeGoalDetails: string;
+  AwayGoalDetails: string;
   HomeLineupGoalkeeper: string;
   AwayLineupGoalkeeper: string;
   HomeLineupDefense: string;
@@ -21,6 +22,12 @@ export class Football {
   AwayLineupForward: string;
   HomeLineupSubstitutes: string;
   AwayLineupSubstitutes: string;
+  HomeTeamYellowCardDetails: string;
+  AwayTeamYellowCardDetails: string;
+  HomeTeamRedCardDetails;
+  AwayTeamRedCardDetails;
+  HomeSubDetails: string;
+  AwaySubDetails: string;
   Location: string;
   Stadium: string;
 
