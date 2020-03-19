@@ -1,0 +1,68 @@
+<div class = "main-content">
+  <app-football-navbar></app-football-navbar>
+  <div class = "section-content section-content-p40">
+    <div class="container-fluid">
+      <h4>{{leagueName}}</h4>
+      <table class = "table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Pos</th>
+          <th>Team</th>
+          <th>Played</th>
+          <th>Wins</th>
+          <th>Draws</th>
+          <th>Losts</th>
+          <th>Goals For</th>
+          <th>Goals Against</th>
+          <th>Goals Difference</th>
+          <th>Points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tempTeam of teamsInLeague; let i = index" [attr.data-index]="i">
+          <td>
+            <h6>{{i+1}}</h6>
+          </td>
+          <td>
+            <img src="{{tempTeam.team.strTeamBadge}}" height = "50" width="50">
+            {{tempTeam.name}}
+          </td>
+          <td>
+            {{tempTeam.played}}
+          </td>
+          <td>
+            {{tempTeam.win}}
+          </td>
+          <td>
+            {{tempTeam.draw}}
+          </td>
+          <td>
+            {{tempTeam.loss}}
+          </td>
+          <td>
+            {{tempTeam.goalsfor}}
+          </td>
+          <td>
+            {{tempTeam.goalsagainst}}
+          </td>
+          <td>
+            {{tempTeam.goalsdifference}}
+          </td>
+          <td>
+            <h6>{{tempTeam.total}}</h6>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

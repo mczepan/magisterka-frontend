@@ -14,16 +14,20 @@ import {TeamComponent} from './components/search/team/team.component';
 import {SearchComponent} from './components/search/search.component';
 import {TeamListComponent} from './components/search/team-list/team-list.component';
 import {PlayerListComponent} from './components/search/player-list/player-list.component';
-import { DetailBasketballComponent } from './components/live/basketball/detail/detail-basketball/detail-basketball.component';
-import { BasketballTableComponent } from './components/table/basketball/basketball-table/basketball-table.component';
-import { BasketballTeamsComponent } from './components/table/basketball/basketball-teams/basketball-teams.component';
-import { FootballResultComponent } from './components/live/football/general/football-result/football-result.component';
-import { FootballDetailComponent } from './components/live/football/detail/football-detail/football-detail.component';
+import {DetailBasketballComponent} from './components/live/basketball/detail/detail-basketball/detail-basketball.component';
+import {BasketballTableComponent} from './components/table/basketball/basketball-table/basketball-table.component';
+import {BasketballTeamsComponent} from './components/table/basketball/basketball-teams/basketball-teams.component';
+import {FootballResultComponent} from './components/live/football/general/football-result/football-result.component';
+import {FootballDetailComponent} from './components/live/football/detail/football-detail/football-detail.component';
 import {FootballNavbarComponent} from "./components/live/football/navbar/football-navbar/football-navbar.component";
+import {CountryComponent} from './components/table/football/country/country.component';
+import {FootballTableComponent} from "./components/table/football/football-table/football-table.component";
 
 const routes: Routes = [
   {path: 'teams/basketball', component: BasketballTeamsComponent},
   {path: 'table/basketball', component: BasketballTableComponent},
+  {path: 'table/football/:id/:keyword', component: FootballTableComponent},
+  {path: 'leagues/Soccer/country/:country', component: CountryComponent},
   {path: 'search/teams/:keyword', component: TeamListComponent},
   {path: 'search/team/:id', component: TeamComponent},
   {path: 'search/players/:keyword', component: PlayerListComponent},
@@ -54,7 +58,9 @@ const routes: Routes = [
     BasketballTeamsComponent,
     FootballResultComponent,
     FootballDetailComponent,
-    FootballNavbarComponent
+    FootballNavbarComponent,
+    CountryComponent,
+    FootballTableComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

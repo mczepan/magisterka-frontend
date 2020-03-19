@@ -29,6 +29,5 @@ export class FootballResultComponent implements OnInit {
 
   goToGameDetails(currentId: number) {
     this.router.navigateByUrl(`live/soccer/details/${currentId}`);
-    console.log(`${currentId}`)
   }
 }
