@@ -19,6 +19,7 @@ import { BasketballTableComponent } from './components/table/basketball/basketba
 import { BasketballTeamsComponent } from './components/table/basketball/basketball-teams/basketball-teams.component';
 import { FootballResultComponent } from './components/live/football/general/football-result/football-result.component';
 import { FootballDetailComponent } from './components/live/football/detail/football-detail/football-detail.component';
+import {FootballNavbarComponent} from "./components/live/football/navbar/football-navbar/football-navbar.component";
 
 const routes: Routes = [
   {path: 'teams/basketball', component: BasketballTeamsComponent},
@@ -52,7 +53,8 @@ const routes: Routes = [
     BasketballTableComponent,
     BasketballTeamsComponent,
     FootballResultComponent,
-    FootballDetailComponent
+    FootballDetailComponent,
+    FootballNavbarComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
