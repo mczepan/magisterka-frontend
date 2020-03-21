@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {SportTypes} from "./common/types/sport-types";
 import {SportTypesService} from "./services/types/sport-types.service";
 import {NgForm} from "@angular/forms";
+import {AuthenticationService} from "./services/authentication/authentication.service";
 
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit{
   sportTypes: SportTypes[];
   isSubmitted = false;
 
-  constructor(private sportTypesService: SportTypesService) {
+  constructor(private sportTypesService: SportTypesService,
+              public loginService: AuthenticationService ) {
   }
 
   ngOnInit(): void {

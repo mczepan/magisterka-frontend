@@ -22,8 +22,13 @@ import {FootballDetailComponent} from './components/live/football/detail/footbal
 import {FootballNavbarComponent} from "./components/live/football/navbar/football-navbar/football-navbar.component";
 import {CountryComponent} from './components/table/football/country/country.component';
 import {FootballTableComponent} from "./components/table/football/football-table/football-table.component";
+import {LoginComponent} from "./components/login/login.component";
+import { LogoutComponent } from './components/login/logout/logout.component';
+
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   {path: 'teams/basketball', component: BasketballTeamsComponent},
   {path: 'table/basketball', component: BasketballTableComponent},
   {path: 'table/football/:id/:keyword', component: FootballTableComponent},
@@ -38,8 +43,8 @@ const routes: Routes = [
   {path: 'live/Soccer', component: FootballResultComponent},
   {path: 'live/:sport', component: BasketballResultComponent},
   {path: 'live', component: BasketballResultComponent},
-  {path: '', redirectTo: 'live', pathMatch: 'full'},
-  {path: '**', redirectTo: 'live', pathMatch: 'full'}
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -60,7 +65,9 @@ const routes: Routes = [
     FootballDetailComponent,
     FootballNavbarComponent,
     CountryComponent,
-    FootballTableComponent
+    FootballTableComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
