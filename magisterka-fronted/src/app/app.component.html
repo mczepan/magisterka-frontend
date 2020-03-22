@@ -32,15 +32,13 @@
           <div class="container-fluid">
             <div class="header-wrap">
               <app-search></app-search>
-              <!--
+
               <div class="cart-area d-n">
-                <a href="shopping-detail.html">
-                  <div class="total">19.22 <span> 2</span></div>
-                  <i class="fa fa-shopping-cart"
-                     aria-hidden="true"></i>
+                <a href="logout">
+                  <i class="fa fa-sign-out-alt"aria-hidden="true"> Logout</i>
                 </a>
               </div>
-              -->
+
             </div>
             <div class="account-wrap"></div>
           </div>
@@ -49,7 +47,6 @@
       <!-- END HEADER DESKTOP-->
 
       <!-- MAIN CONTENT-->
-      <!--<app-basketball-result></app-basketball-result> -->
       <router-outlet></router-outlet>
       <!-- END MAIN CONTENT-->
 
@@ -66,6 +63,30 @@
   </footer>
 </ng-template>
 <ng-template #elseBlock>
-  <router-outlet></router-outlet>
+  <div class="page-wrapper">
+    <aside class="menu-sidebar d-none d-lg-block">
+      <div class="logo">
+        <a href="home.html">
+          <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
+        </a>
+      </div>
+    </aside>
+    <div class="page-container">
+      <!-- HEADER DESKTOP-->
+      <header class="header-desktop">
+        <div class="section-content section-content-p30">
+          <div class="container-fluid">
+            <div class="header-wrap">
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="main-content">
+        <div class="section-content section-content-p30">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
 </ng-template>
 
