@@ -1,3 +1,5 @@
+import {Team} from "../../../types/team/team";
+
 export class Football {
 
   Date: string;
@@ -30,5 +32,8 @@ export class Football {
   AwaySubDetails: string;
   Location: string;
   Stadium: string;
+  homeTeamDetail: Team;
+  awayTeamDetail: Team;
+
 
 }

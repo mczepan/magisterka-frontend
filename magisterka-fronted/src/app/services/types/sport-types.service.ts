@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Basketball} from '../../common/live/basketball/general/basketball';
 import {map} from 'rxjs/operators';
 import {SportTypes} from '../../common/types/sport-types';
 
@@ -15,14 +14,22 @@ export class SportTypesService {
   constructor(private httpClient: HttpClient) { }
 
   getSportTypesList(): Observable<SportTypes[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
+    let username='javainuse'
+    let password='password'
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+
+    return this.httpClient.get<GetResponse>(this.baseUrl,{headers}).pipe(
       map(response => response.sports)
     );
   }
 
   getSportType(theSportType: string): Observable<SportTypes> {
+    let username='javainuse'
+    let password='password'
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+
     const sportTypeUrl = `${this.baseUrl}/${theSportType}`;
-    return this.httpClient.get<SportTypes>(sportTypeUrl);
+    return this.httpClient.get<SportTypes>(sportTypeUrl, {headers});
   }
 }
 

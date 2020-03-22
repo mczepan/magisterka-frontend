@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Football} from "../../../../../common/live/football/general/football";
 import {FootballService} from "../../../../../services/live/football/football.service";
 import {ActivatedRoute} from "@angular/router";
+import {Team} from "../../../../../common/types/team/team";
 
 @Component({
   selector: 'app-football-detail',
@@ -16,6 +17,8 @@ export class FootballDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.match.homeTeamDetail = new Team();
+    this.match.awayTeamDetail = new Team();
     this.route.paramMap.subscribe(() => {
       this.handleFootballGame()
     });

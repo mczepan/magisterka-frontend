@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {Team} from "../../common/types/team/team";
 import {Player} from "../../common/types/player/player";
@@ -18,7 +18,12 @@ export class SearchService {
   searchTeams(theKeyword: string): Observable<Team[]> {
     const searchUrl = `${this.baseUrl}/teams/${theKeyword}`;
 
-    return this.httpClient.get<GetTeamResponse>(searchUrl).pipe(
+    let username = 'javainuse'
+    let password = 'password'
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
+
+
+    return this.httpClient.get<GetTeamResponse>(searchUrl, {headers}).pipe(
       map(response => response.teams)
     )
   }
@@ -26,7 +31,12 @@ export class SearchService {
   searchPlayers(theKeyword: string): Observable<Player[]> {
     const searchUrl = `${this.baseUrl}/players/${theKeyword}`;
 
-    return this.httpClient.get<GetPlayersResponse>(searchUrl).pipe(
+    let username = 'javainuse'
+    let password = 'password'
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
+
+
+    return this.httpClient.get<GetPlayersResponse>(searchUrl, {headers}).pipe(
       map(response => response.player)
     )
   }
@@ -34,7 +44,12 @@ export class SearchService {
   getPlayer(thePlayerId: string) {
     const searchUrl = `${this.baseUrl}/player/${thePlayerId}`;
 
-    return this.httpClient.get<GetSinglePlayerResponse>(searchUrl).pipe(
+    let username = 'javainuse'
+    let password = 'password'
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
+
+
+    return this.httpClient.get<GetSinglePlayerResponse>(searchUrl, {headers}).pipe(
       map(response => response.players)
     )
   }
@@ -42,7 +57,11 @@ export class SearchService {
   getTeam(theTeamId: string) {
     const searchUrl = `${this.baseUrl}/team/${theTeamId}`;
 
-    return this.httpClient.get<GetTeamResponse>(searchUrl).pipe(
+    let username = 'javainuse'
+    let password = 'password'
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
+
+    return this.httpClient.get<GetTeamResponse>(searchUrl, {headers}).pipe(
       map(response => response.teams)
     )
   }

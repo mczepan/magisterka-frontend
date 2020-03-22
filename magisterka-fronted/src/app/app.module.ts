@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BasketballResultComponent} from './components/live/basketball/general/basketball-result/basketball-result.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BaskteballService} from './services/live/basketball/baskteball.service';
 import {BasketballNavbarComponent} from './components/live/basketball/navbar/basketball-navbar.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -24,27 +24,29 @@ import {CountryComponent} from './components/table/football/country/country.comp
 import {FootballTableComponent} from "./components/table/football/football-table/football-table.component";
 import {LoginComponent} from "./components/login/login.component";
 import { LogoutComponent } from './components/login/logout/logout.component';
+import {AuthGaurdService} from "./services/gaurd/auth-gaurd.service";
+import {InterceptorService} from "./services/interceptor/interceptor.service";
 
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent },
-  {path: 'teams/basketball', component: BasketballTeamsComponent},
-  {path: 'table/basketball', component: BasketballTableComponent},
-  {path: 'table/football/:id/:keyword', component: FootballTableComponent},
-  {path: 'leagues/Soccer/country/:country', component: CountryComponent},
-  {path: 'search/teams/:keyword', component: TeamListComponent},
-  {path: 'search/team/:id', component: TeamComponent},
-  {path: 'search/players/:keyword', component: PlayerListComponent},
-  {path: 'search/player/:id', component: PlayerComponent},
-  {path: 'type/:sport', component: SportTypesComponent},
-  {path: 'live/basketball/:date/:game-id', component: DetailBasketballComponent},
-  {path: 'live/soccer/details/:id', component: FootballDetailComponent},
-  {path: 'live/Soccer', component: FootballResultComponent},
-  {path: 'live/:sport', component: BasketballResultComponent},
-  {path: 'live', component: BasketballResultComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: '**', redirectTo: 'login', pathMatch: 'full'}
+  {path: 'login', component: LoginComponent},
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
+  {path: 'teams/basketball', component: BasketballTeamsComponent, canActivate:[AuthGaurdService] },
+  {path: 'table/basketball', component: BasketballTableComponent, canActivate:[AuthGaurdService] },
+  {path: 'table/football/:id/:keyword', component: FootballTableComponent, canActivate:[AuthGaurdService] },
+  {path: 'leagues/Soccer/country/:country', component: CountryComponent, canActivate:[AuthGaurdService] },
+  {path: 'search/teams/:keyword', component: TeamListComponent, canActivate:[AuthGaurdService] },
+  {path: 'search/team/:id', component: TeamComponent, canActivate:[AuthGaurdService] },
+  {path: 'search/players/:keyword', component: PlayerListComponent, canActivate:[AuthGaurdService] },
+  {path: 'search/player/:id', component: PlayerComponent, canActivate:[AuthGaurdService] },
+  {path: 'type/:sport', component: SportTypesComponent, canActivate:[AuthGaurdService] },
+  {path: 'live/basketball/:date/:game-id', component: DetailBasketballComponent, canActivate:[AuthGaurdService] },
+  {path: 'live/soccer/details/:id', component: FootballDetailComponent, canActivate:[AuthGaurdService] },
+  {path: 'live/Soccer', component: FootballResultComponent, canActivate:[AuthGaurdService] },
+  {path: 'live/:sport', component: BasketballResultComponent, canActivate:[AuthGaurdService] },
+  {path: 'live', component: BasketballResultComponent, canActivate:[AuthGaurdService] },
+  {path: '', redirectTo: 'live', pathMatch: 'full'},
+  {path: '**', redirectTo: 'live', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -75,7 +77,9 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [BaskteballService],
+  providers: [BaskteballService,{
+    provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
