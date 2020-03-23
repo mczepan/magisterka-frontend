@@ -26,9 +26,11 @@ import {LoginComponent} from "./components/login/login.component";
 import { LogoutComponent } from './components/login/logout/logout.component';
 import {AuthGaurdService} from "./services/gaurd/auth-gaurd.service";
 import {InterceptorService} from "./services/interceptor/interceptor.service";
+import { RegisterComponent } from './components/login/register/register.component';
 
 
 const routes: Routes = [
+  {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
   {path: 'teams/basketball', component: BasketballTeamsComponent, canActivate:[AuthGaurdService] },
@@ -69,7 +71,8 @@ const routes: Routes = [
     CountryComponent,
     FootballTableComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

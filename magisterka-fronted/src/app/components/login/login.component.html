@@ -1,11 +1,27 @@
-﻿<div class="container">
-  <div>
-    User Name : <input type="text" name="username" [(ngModel)]="username">
-    Password : <input type="password" name="password" [(ngModel)]="password">
-  </div>
-  <button (click)=checkLogin() class="btn btn-success">
-    Login
-  </button>
-</div>
+﻿<!--<div class="container">-->
+<!--  <div>-->
+<!--    User Name : <input type="text" name="username" [(ngModel)]="username">-->
+<!--    Password : <input type="password" name="password" [(ngModel)]="password">-->
+<!--  </div>-->
+<!--  <button (click)=checkLogin() class="btn btn-success">-->
+<!--    Login-->
+<!--  </button>-->
+<!--</div>-->
 
+<div class="hero">
+
+  <div class="form-box">
+    <h2 class="gradient-multiline"><span>Login</span></h2>
+    <form class="input-group">
+      <input type="text" name="username" [(ngModel)]="username" class="input-field" placeholder="Username" required>
+      <input type="password" name="password" [(ngModel)]="password" class="input-field" placeholder="Password" required>
+      <button (click)=checkLogin() type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+  <div class="button-box">
+    <div id="btn-login"></div>
+    <a type="button" style="color:black" class="toggle-btn" href="/login">Login</a>
+    <a type="button" style="color:white" class="toggle-btn" href="/register">Register</a>
+  </div>
+</div>
 

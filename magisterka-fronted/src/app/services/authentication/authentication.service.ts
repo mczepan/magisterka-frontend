@@ -30,6 +30,9 @@ export class AuthenticationService {
 
     );
   }
+  register(username, password, email) {
+    return this.httpClient.post<any>('http://localhost:8080/api/login/register', {username,password,email})
+  }
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
