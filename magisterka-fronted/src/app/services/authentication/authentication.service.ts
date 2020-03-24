@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
 export class User {
@@ -41,5 +41,12 @@ export class AuthenticationService {
 
   logOut() {
     sessionStorage.removeItem('username')
+  }
+
+  verifyToken(theValueToken: string) {
+    let params  = new HttpParams();
+    params  = params .append('value', theValueToken);
+
+    return this.httpClient.get('http://localhost:8080/api/login/token', {params : params }).subscribe();
   }
 }

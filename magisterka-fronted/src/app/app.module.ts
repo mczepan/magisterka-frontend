@@ -32,6 +32,7 @@ import {ToastrModule} from "ngx-toastr";
 
 
 const routes: Routes = [
+  {path: 'login/:value', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
