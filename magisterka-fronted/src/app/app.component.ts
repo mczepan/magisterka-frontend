@@ -3,6 +3,7 @@ import {SportTypes} from "./common/types/sport-types";
 import {SportTypesService} from "./services/types/sport-types.service";
 import {NgForm} from "@angular/forms";
 import {AuthenticationService} from "./services/authentication/authentication.service";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit{
   isSubmitted = false;
 
   constructor(private sportTypesService: SportTypesService,
-              public loginService: AuthenticationService ) {
+              public loginService: AuthenticationService,
+              private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -40,4 +42,7 @@ export class AppComponent implements OnInit{
     }
   }
 
+  logout() {
+    this.toastrService.info("User has been logout", "Info");
+  }
 }

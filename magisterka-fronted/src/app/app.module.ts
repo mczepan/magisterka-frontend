@@ -27,6 +27,8 @@ import { LogoutComponent } from './components/login/logout/logout.component';
 import {AuthGaurdService} from "./services/gaurd/auth-gaurd.service";
 import {InterceptorService} from "./services/interceptor/interceptor.service";
 import { RegisterComponent } from './components/login/register/register.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 
 const routes: Routes = [
@@ -72,13 +74,21 @@ const routes: Routes = [
     FootballTableComponent,
     LoginComponent,
     LogoutComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: "toast-top-center",
+      preventDuplicates: true,
+      progressBar: true
+
+    }),
   ],
   providers: [BaskteballService,{
     provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true

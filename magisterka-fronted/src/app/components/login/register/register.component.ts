@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from "../../../services/authentication/authentication.service";
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-register',
@@ -14,15 +15,20 @@ export class RegisterComponent implements OnInit {
   password = ''
   email =''
   constructor(private loginservice: AuthenticationService,
-              private router: Router) { }
+              private router: Router,
+              private toastrService: ToastrService) { }
 
   ngOnInit(): void {
   }
 
   register(form: NgForm) {
-    console.log(`TEST: ${this.username} ${this.password} ${this.email}`);
-    (this.loginservice.register(this.username, this.password,this.email).subscribe());
-    form.reset();
-    this.router.navigate(['login'])
+    if (this.username === '' || this.password === '') {
+      this.toastrService.warning("Please fill all fields", "Warning!");
+    } else {
+      (this.loginservice.register(this.username, this.password, this.email).subscribe());
+      form.reset();
+      this.toastrService.success("User has been created", "Success!");
+      this.router.navigate(['login'])
+    }
   }
 }
