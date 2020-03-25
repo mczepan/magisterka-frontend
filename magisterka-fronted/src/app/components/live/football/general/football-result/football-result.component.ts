@@ -11,12 +11,14 @@ import {FootballService} from "../../../../../services/live/football/football.se
 export class FootballResultComponent implements OnInit {
 
   footballResults: Football[] = [];
+  username: string;
 
   constructor(private footballService: FootballService,
               private router: Router) { }
 
   ngOnInit(): void {
     this.footballResult();
+    this.username = sessionStorage.getItem('username')
   }
 
   footballResult() {

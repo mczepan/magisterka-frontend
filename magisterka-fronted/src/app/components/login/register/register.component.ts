@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   username = ''
   password = ''
   email =''
-  constructor(private loginservice: AuthenticationService,
+  constructor(private loginService: AuthenticationService,
               private router: Router,
               private toastrService: ToastrService) { }
 
@@ -25,10 +25,16 @@ export class RegisterComponent implements OnInit {
     if (this.username === '' || this.password === '') {
       this.toastrService.warning("Please fill all fields", "Warning!");
     } else {
-      (this.loginservice.register(this.username, this.password, this.email).subscribe());
-      form.reset();
-      this.toastrService.success("User has been created", "Success!");
-      this.router.navigate(['login'])
+      (this.loginService.register(this.username, this.password, this.email).subscribe(
+        data => {
+          form.reset();
+          this.toastrService.success("User has been created", "Success!");
+          this.router.navigate(['login'])
+        },
+        error => {
+          this.toastrService.error("Provided username or email exist/incorrect", "Error!");
+        }
+      ));
     }
   }
 }

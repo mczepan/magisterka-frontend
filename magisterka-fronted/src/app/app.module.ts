@@ -29,9 +29,12 @@ import {InterceptorService} from "./services/interceptor/interceptor.service";
 import { RegisterComponent } from './components/login/register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { TeamsComponent } from './components/account/teams/teams.component';
+import { NavbarAccountComponent } from './components/account/navbar/navbar-account/navbar-account.component';
 
 
 const routes: Routes = [
+  {path: 'account/teams', component: TeamsComponent,canActivate: [AuthGaurdService]},
   {path: 'login/:value', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
@@ -76,6 +79,8 @@ const routes: Routes = [
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
+    TeamsComponent,
+    NavbarAccountComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
