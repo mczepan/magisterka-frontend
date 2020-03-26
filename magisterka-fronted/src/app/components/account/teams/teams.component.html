@@ -8,9 +8,8 @@
         <thead class="thead-dark">
         <tr>
           <th>Team Name</th>
-          <th>Sport Type</th>
           <th>Logo</th>
-          <th>Team Detail</th>
+          <th>Sport Type</th>
           <th></th>
         </tr>
         </thead>
@@ -18,18 +17,15 @@
         <tbody>
         <tr *ngFor="let tempTeam of teams">
           <td>
-            <h4>{{tempTeam.strTeam}}</h4>
+            <a href="/account/favTeam/{{tempTeam.idTeam}}"> <h5 style = "color: #205b8d">{{tempTeam.strTeam}}</h5></a>
+          </td>
+          <td>
+            <a href="/account/favTeam/{{tempTeam.idTeam}}">
+              <img src="{{tempTeam.strTeamBadge}}" height = "80" width="80">
+            </a>
           </td>
           <td>
             {{tempTeam.strSport}}
-          </td>
-          <td>
-            <img src="{{tempTeam.strTeamBadge}}" height = "50" width="50">
-          </td>
-          <td>
-            <button (click)=getTeamDetails(tempTeam.idTeam) class=au-btn-submit>
-              Details
-            </button>
           </td>
           <td>
             <a href="account/teams">

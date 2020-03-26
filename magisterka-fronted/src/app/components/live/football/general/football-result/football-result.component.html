@@ -13,38 +13,7 @@
           <th>Time</th>
           <th>Game Detail</th>
         </tr>
-        </thead>    <!--
-        <tbody>
-        <td>
-          <h6>{{footballResults.League}}</h6>
-        </td>
-        <td>
-          {{footballResults.HomeTeam}}
-        </td>
-        <div *ngIf="footballResults.Time != 'NOT'; then thenBlock else elseBlock"></div>
-        <ng-template #thenBlock>
-          <td style="color: red">{{footballResults.HomeGoals}} : {{footballResults.AwayGoals}}</td>
-        </ng-template>
-        <ng-template #elseBlock>
-          <td>{{footballResults.HomeGoals}} : {{footballResults.AwayGoals}}</td>
-        </ng-template>
-
-        <div *ngIf="footballResults.Time != 'Not started' || footballResults.Time != 'Postponed'; then thenBlock2 else elseBlock2"></div>
-        <ng-template #thenBlock2>
-          <td style="color: red">{{footballResults.Time}}</td>
-        </ng-template>
-        <ng-template #elseBlock2>
-          <td>{{footballResults.Time}}</td>
-        </ng-template>
-        <td>
-          {{footballResults.AwayTeam}}
-        </td>
-        <td>
-          <button (click)=goToGameDetails(footballResults) class=au-btn-submit>
-            Details
-          </button>
-        </td>
-        </tbody>        -->
+        </thead>
         <tbody>
         <tr *ngFor="let tempFootballReults of footballResults; let i = index" [attr.data-index]="i">
           <td>

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Team} from "../../common/types/team/team";
 import {HttpClient} from "@angular/common/http";
+import {FavTeam} from "../../common/fav-team/fav-team";
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,20 @@ export class UserService {
     return this.httpClient.get<Team[]>(favTeamsUrl);
   }
 
-  remove(idTeam: string) {
-    const removeTeamUrl = `${this.baseUrl}/team/${idTeam}`;
+  remove(theTeamID: string) {
+    const removeTeamUrl = `${this.baseUrl}/team/${theTeamID}`;
 
     return this.httpClient.delete(removeTeamUrl);
   }
 
-  addFavTeam(idTeam: string) {
-    const addTeamUrl = `${this.baseUrl}/team/${idTeam}`;
+  addFavTeam(theTeamID: string) {
+    const addTeamUrl = `${this.baseUrl}/team/${theTeamID}`;
     return this.httpClient.post<any>(addTeamUrl,{});
 
+  }
+
+  getFavTeam(theTeamID: string) {
+    const getFavTeamUrl = `${this.baseUrl}/team/${theTeamID}`;
+    return this.httpClient.get<FavTeam>(getFavTeamUrl);
   }
 }

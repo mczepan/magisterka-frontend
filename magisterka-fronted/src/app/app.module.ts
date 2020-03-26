@@ -32,9 +32,11 @@ import {ToastrModule} from "ngx-toastr";
 import {TeamsComponent} from './components/account/teams/teams.component';
 import {NavbarAccountComponent} from './components/account/navbar/navbar-account/navbar-account.component';
 import {AddTeamComponent} from './components/account/add-team/add-team.component';
+import { FavTeamDetailComponent } from './components/account/fav-team-detail/fav-team-detail.component';
 
 
 const routes: Routes = [
+  {path: 'account/favTeam/:id', component: FavTeamDetailComponent, canActivate: [AuthGaurdService]},
   {path: 'account/addTeam', component: AddTeamComponent, canActivate: [AuthGaurdService]},
   {path: 'account/teams', component: TeamsComponent, canActivate: [AuthGaurdService]},
   {path: 'login/:value', component: LoginComponent},
@@ -84,6 +86,7 @@ const routes: Routes = [
     TeamsComponent,
     NavbarAccountComponent,
     AddTeamComponent,
+    FavTeamDetailComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

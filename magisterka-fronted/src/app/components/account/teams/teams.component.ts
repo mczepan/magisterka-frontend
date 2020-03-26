@@ -26,10 +26,6 @@ export class TeamsComponent implements OnInit {
     )
   }
 
-  getTeamDetails(idTeam: string) {
-    this.router.navigateByUrl(`/search/team/${idTeam}`);
-  }
-
   removeTeam(idTeam: string) {
     this.userService.remove(idTeam).subscribe()
   }

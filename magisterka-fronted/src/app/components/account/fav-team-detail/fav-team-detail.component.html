@@ -1,0 +1,118 @@
+<div class="main-content">
+  <app-navbar-account></app-navbar-account>
+  <div class="section-content section-content-p40">
+    <div style="text-align: center;">
+      <img src="{{favTeam.teamInfo.strTeamBadge}}" class="detail-img-team-fav">
+    </div>
+    <br>
+    <div class="container-fluid">
+      <h3>Next events</h3>
+      <hr>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>League</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Home Team</th>
+          <th>Visit Team</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tmpEvent of favTeam.nextEvents">
+          <td>
+            <h6>{{tmpEvent.strLeague}}</h6>
+          </td>
+          <td>
+            {{tmpEvent.dateEvent}}
+          </td>
+          <td>
+            {{tmpEvent.strTime}}
+          </td>
+          <td>
+            <h6>{{tmpEvent.strHomeTeam}}</h6>
+          </td>
+          <td>
+            <h6>{{tmpEvent.strAwayTeam}}</h6>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+      <h3>Last results</h3>
+      <hr>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>League</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Home Team</th>
+          <th>Result</th>
+          <th>Visit Team</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tmpReults of favTeam.lastResults">
+          <td>
+            <h6>{{tmpReults.strLeague}}</h6>
+          </td>
+          <td>
+            {{tmpReults.dateEvent}}
+          </td>
+          <td>
+            {{tmpReults.strTime}}
+          </td>
+          <td>
+            <h6>{{tmpReults.strHomeTeam}}</h6>
+          </td>
+          <td>
+            <h6>{{tmpReults.intHomeScore}}:{{tmpReults.intAwayScore}}</h6>
+          </td>
+          <td>
+            <h6>{{tmpReults.strAwayTeam}}</h6>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+      <h3>Squad</h3>
+      <hr>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Player</th>
+          <th>Position</th>
+          <th>Number</th>
+          <th>Nationality</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tmpPlayer of favTeam.player">
+          <td>
+            <h5>{{tmpPlayer.strPlayer}}</h5>
+            <img src="{{tmpPlayer.strThumb}}" height = "80" width="80">
+          </td>
+          <td>
+            <h6>{{tmpPlayer.strPosition}}</h6>
+          </td>
+          <td>
+            <h6>{{tmpPlayer.strNumber}}</h6>
+          </td>
+          <td>
+            <h6>{{tmpPlayer.strNationality}}</h6>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <a routerLink="/account/teams" class="mt-5">Back to favourite teams</a>
+  </div>
+</div>
+
+
+

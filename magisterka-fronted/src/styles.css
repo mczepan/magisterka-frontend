@@ -853,6 +853,9 @@ table.table.table-bordered th {
 .detail-img-team {
   width: 30%;
 }
+.detail-img-team-fav {
+  width: 20%;
+}
 
 .detail-img-team-nba {
   width: 15%;
