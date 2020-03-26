@@ -1,0 +1,65 @@
+<div class="main-content">
+  <app-navbar-account></app-navbar-account>
+  <div class="section-content section-content-p40">
+    <div class="container-fluid">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+            integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+      <div class="container">
+        <br/>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+              <div class="card-body row no-gutters align-items-center">
+                <div class="col">
+                  <input #myInput class="form-control form-control-lg form-control-borderless" type="text"
+                         placeholder="Search favourite team" (keyup.enter)="findTeam(myInput.value)"/>
+                </div>
+                <div class="col-auto">
+                  <button (click)="findTeam(myInput.value)" class="btn btn-lg btn-success" type="submit">Find!</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div *ngIf="displayResult; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <h3>Founded teams</h3>
+        <table class = "table table-striped">
+          <thead class="thead-dark">
+          <tr>
+            <th>Team Name</th>
+            <th>Sport Type</th>
+            <th>Logo</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let tempTeam of teams">
+            <td>
+              <h4>{{tempTeam.strTeam}}</h4>
+            </td>
+            <td>
+              {{tempTeam.strSport}}
+            </td>
+            <td>
+              <img src="{{tempTeam.strTeamBadge}}" height = "100" width="100">
+            </td>
+            <td>
+              <button (click)=addTeam(tempTeam.idTeam) class="fas fa-plus-square big-icon">
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </ng-template>
+      <ng-template #elseBlock>
+
+      </ng-template>
+    </div>
+  </div>
+</div>
+

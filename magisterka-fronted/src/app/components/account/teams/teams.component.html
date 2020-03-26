@@ -2,7 +2,43 @@
   <app-navbar-account></app-navbar-account>
   <div class="section-content section-content-p40">
     <div class="container-fluid">
-      {{username}}
+      <h3>Favourite Teams</h3>
+      <hr>
+      <table class = "table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Team Name</th>
+          <th>Sport Type</th>
+          <th>Logo</th>
+          <th>Team Detail</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let tempTeam of teams">
+          <td>
+            <h4>{{tempTeam.strTeam}}</h4>
+          </td>
+          <td>
+            {{tempTeam.strSport}}
+          </td>
+          <td>
+            <img src="{{tempTeam.strTeamBadge}}" height = "50" width="50">
+          </td>
+          <td>
+            <button (click)=getTeamDetails(tempTeam.idTeam) class=au-btn-submit>
+              Details
+            </button>
+          </td>
+          <td>
+            <a href="account/teams">
+              <i (click) = removeTeam(tempTeam.idTeam) class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

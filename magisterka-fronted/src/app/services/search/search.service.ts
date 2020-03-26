@@ -18,12 +18,7 @@ export class SearchService {
   searchTeams(theKeyword: string): Observable<Team[]> {
     const searchUrl = `${this.baseUrl}/teams/${theKeyword}`;
 
-    let username = 'javainuse'
-    let password = 'password'
-    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-
-
-    return this.httpClient.get<GetTeamResponse>(searchUrl, {headers}).pipe(
+    return this.httpClient.get<GetTeamResponse>(searchUrl).pipe(
       map(response => response.teams)
     )
   }
@@ -31,12 +26,7 @@ export class SearchService {
   searchPlayers(theKeyword: string): Observable<Player[]> {
     const searchUrl = `${this.baseUrl}/players/${theKeyword}`;
 
-    let username = 'javainuse'
-    let password = 'password'
-    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-
-
-    return this.httpClient.get<GetPlayersResponse>(searchUrl, {headers}).pipe(
+    return this.httpClient.get<GetPlayersResponse>(searchUrl).pipe(
       map(response => response.player)
     )
   }
@@ -44,12 +34,7 @@ export class SearchService {
   getPlayer(thePlayerId: string) {
     const searchUrl = `${this.baseUrl}/player/${thePlayerId}`;
 
-    let username = 'javainuse'
-    let password = 'password'
-    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-
-
-    return this.httpClient.get<GetSinglePlayerResponse>(searchUrl, {headers}).pipe(
+    return this.httpClient.get<GetSinglePlayerResponse>(searchUrl).pipe(
       map(response => response.players)
     )
   }
@@ -57,11 +42,7 @@ export class SearchService {
   getTeam(theTeamId: string) {
     const searchUrl = `${this.baseUrl}/team/${theTeamId}`;
 
-    let username = 'javainuse'
-    let password = 'password'
-    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-
-    return this.httpClient.get<GetTeamResponse>(searchUrl, {headers}).pipe(
+    return this.httpClient.get<GetTeamResponse>(searchUrl).pipe(
       map(response => response.teams)
     )
   }

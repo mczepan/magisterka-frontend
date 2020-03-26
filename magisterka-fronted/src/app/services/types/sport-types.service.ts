@@ -14,22 +14,18 @@ export class SportTypesService {
   constructor(private httpClient: HttpClient) { }
 
   getSportTypesList(): Observable<SportTypes[]> {
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
 
-    return this.httpClient.get<GetResponse>(this.baseUrl,{headers}).pipe(
+
+    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
       map(response => response.sports)
     );
   }
 
   getSportType(theSportType: string): Observable<SportTypes> {
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+
 
     const sportTypeUrl = `${this.baseUrl}/${theSportType}`;
-    return this.httpClient.get<SportTypes>(sportTypeUrl, {headers});
+    return this.httpClient.get<SportTypes>(sportTypeUrl, );
   }
 }
 

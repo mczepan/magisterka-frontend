@@ -21,37 +21,25 @@ export class BaskteballService {
   constructor(private httpClient: HttpClient) { }
 
   getBasketballResultList(): Observable<Basketball[]> {
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
 
-    return this.httpClient.get<GetResponse>(this.baseUrl,{headers}).pipe(
+
+    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
       map(response => response.games)
     );
   }
 
   getBasketballGameDetails(theDate: string,theGameID:string): Observable<Boxscore> {
     const detailUrl = `${this.baseUrl}/${theDate}/${theGameID}`;
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<Boxscore>(detailUrl,{headers});
+
+    return this.httpClient.get<Boxscore>(detailUrl);
   }
 
   getBasketballStandings(): Observable<Standings> {
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-
-    return this.httpClient.get<Standings>(this.baseUrlTable,{headers});
+    return this.httpClient.get<Standings>(this.baseUrlTable);
   }
 
   getTeams() : Observable<TeamBasketball> {
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-
-    return this.httpClient.get<TeamBasketball>(this.baseUrlTeam,{headers});
+    return this.httpClient.get<TeamBasketball>(this.baseUrlTeam);
   }
 }
 

@@ -18,34 +18,24 @@ export class FootballService {
   }
 
   getFootballResultList(): Observable<Football[]> {
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
 
-    return this.httpClient.get<GetResponse>(this.baseUrl,{headers}).pipe(
+
+
+    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
       map(response => response.teams.Match));
   }
 
   getFootballGameDetails(theGameId: number): Observable<Football> {
     const matchUrl = `${this.baseUrl}/${theGameId}`;
 
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-
-    return this.httpClient.get<GetResponseGameDetails>(matchUrl,{headers}).pipe(
+    return this.httpClient.get<GetResponseGameDetails>(matchUrl).pipe(
       map(response => response.teams.Match[0]));
   }
 
   getLeagues(theCountry: string): Observable<League[]> {
     const matchTableUrl = `${this.tableUrl}/leagues/${theCountry}`;
 
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-
-
-    return this.httpClient.get<GetLeaguesInCountry>(matchTableUrl,{headers}).pipe(
+    return this.httpClient.get<GetLeaguesInCountry>(matchTableUrl).pipe(
       map(response => response.countrys));
 
   }
@@ -53,11 +43,7 @@ export class FootballService {
   getTeamsInLeague(theLeagueId: string): Observable<FootballTable[]> {
     const matchTableUrl = `${this.tableUrl}/table/${theLeagueId}`;
 
-    let username='javainuse'
-    let password='password'
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-
-    return this.httpClient.get<GetTeamsInLeague>(matchTableUrl, {headers}).pipe(
+    return this.httpClient.get<GetTeamsInLeague>(matchTableUrl).pipe(
       map(response => response.table));
   }
 }
