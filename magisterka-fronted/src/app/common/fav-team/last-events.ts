@@ -6,4 +6,6 @@ export class LastEvents {
   strTime: string;
   intHomeScore: string;
   intAwayScore: string;
+  strHomeTeamBadge: string;
+  strAwayTeamBadge: string;
 }

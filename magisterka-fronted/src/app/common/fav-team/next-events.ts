@@ -4,4 +4,6 @@ export class NextEvents {
   strAwayTeam: string;
   dateEvent: string;
   strTime: string;
+  strHomeTeamBadge: string;
+  strAwayTeamBadge: string;
 }
