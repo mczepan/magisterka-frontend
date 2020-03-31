@@ -1,0 +1,273 @@
+<div class="main-content">
+  <app-navbar-account></app-navbar-account>
+  <div class="section-content section-content-p40">
+
+    <h3>Favourite team property</h3>
+    <hr>
+
+    <div class="container">
+      <h4>Country:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="country" value="Poland" [(ngModel)]="hasCountry">
+        <label class="form-check-label">
+          Poland
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="country" value="Italy" [(ngModel)]="hasCountry">
+        <label class="form-check-label">
+          Italy
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="country" value="Spain" [(ngModel)]="hasCountry">
+        <label class="form-check-label">
+          Spain
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="country" value="Germany" [(ngModel)]="hasCountry">
+        <label class="form-check-label">
+          Germany
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="country" value="England" [(ngModel)]="hasCountry">
+        <label class="form-check-label">
+          England
+        </label>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <br>
+      <h4>Team Value:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="value" value="0-100M" [(ngModel)]="hasValue">
+        <label class="form-check-label">
+          0-100M
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="value" value="100M-500M" [(ngModel)]="hasValue">
+        <label class="form-check-label">
+          100M-500M
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="value" value="500M-1Bn" [(ngModel)]="hasValue">
+        <label class="form-check-label">
+          500M-1Bn
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="value" value="1Bn" [(ngModel)]="hasValue">
+        <label class="form-check-label">
+          1Bn
+        </label>
+      </div>
+    </div>
+
+    <div class="container">
+      <br>
+      <h4>National champion:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="champion" value="Few" [(ngModel)]="hasChampion">
+        <label class="form-check-label">
+          Few
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="champion" value="MoreThan10" [(ngModel)]="hasChampion">
+        <label class="form-check-label">
+          More Than 10
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="champion" value="None" [(ngModel)]="hasChampion">
+        <label class="form-check-label">
+          None
+        </label>
+      </div>
+    </div>
+
+    <div class="container">
+      <br>
+      <h4>National champion:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="style" value="Offensive" [(ngModel)]="hasStyle">
+        <label class="form-check-label">
+          Offensive
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="style" value="Defensive" [(ngModel)]="hasStyle">
+        <label class="form-check-label">
+          Defensive
+        </label>
+      </div>
+    </div>
+
+    <div class="container">
+      <br>
+      <h4>City populations:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="population" value="Large" [(ngModel)]="hasPopulation">
+        <label class="form-check-label">
+          Large
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="population" value="Medium" [(ngModel)]="hasPopulation">
+        <label class="form-check-label">
+          Medium
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="population" value="Small" [(ngModel)]="hasPopulation">
+        <label class="form-check-label">
+          Small
+        </label>
+      </div>
+    </div>
+
+    <div class="container">
+      <br>
+      <h4>Club crest color:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="Black" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          Black
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="Blue" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          Blue
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="Green" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          Green
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="Orange" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          Orange
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="Red" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          Red
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="White" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          White
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="color" value="Yellow" [(ngModel)]="hasColor">
+        <label class="form-check-label">
+          Yellow
+        </label>
+      </div>
+    </div>
+
+    <div class="container">
+      <br>
+      <h4>Club crest shape:</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="shape" value="Circle" [(ngModel)]="hasShape">
+        <label class="form-check-label">
+          Circle
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="shape" value="Oval" [(ngModel)]="hasShape">
+        <label class="form-check-label">
+          Oval
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="shape" value="Rectangle" [(ngModel)]="hasShape">
+        <label class="form-check-label">
+          Rectangle
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="shape" value="Square" [(ngModel)]="hasShape">
+        <label class="form-check-label">
+          Square
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="shape" value="Triangle" [(ngModel)]="hasShape">
+        <label class="form-check-label">
+          Triangle
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="shape" value="Other" [(ngModel)]="hasShape">
+        <label class="form-check-label">
+          Other
+        </label>
+      </div>
+      <p>
+        <br>
+        <br>
+        <button (click)=click() class=submit-btn>
+          <h5>Search</h5>
+        </button>
+      </p>
+      <p>
+        <button (click)=clearSortingFilters() class=submit-btn>
+          Clear all
+        </button>
+      </p>
+    </div>
+
+    <div *ngIf="displayResult && teams?.length > 0; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <h3>Founded teams</h3>
+      <table class = "table table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Team Name</th>
+          <th>Sport Type</th>
+          <th>Logo</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tempTeam of teams">
+          <td>
+            <h4>{{tempTeam.strTeam}}</h4>
+          </td>
+          <td>
+            {{tempTeam.strSport}}
+          </td>
+          <td>
+            <img src="{{tempTeam.strTeamBadge}}" height = "100" width="100">
+          </td>
+          <td>
+            <button (click)=addTeam(tempTeam.idTeam) class="fas fa-plus-square big-icon">
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    <ng-template #elseBlock>
+      <ng-container *ngIf="displayResult && teams?.length === 0; else  elsePart">{{invalidDataEntered()}}</ng-container>
+    </ng-template>
+    <ng-template #elsePart></ng-template>
+
+  </div>
+</div>
+

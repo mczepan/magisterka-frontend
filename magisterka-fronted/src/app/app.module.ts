@@ -8,7 +8,7 @@ import {BaskteballService} from './services/live/basketball/baskteball.service';
 import {BasketballNavbarComponent} from './components/live/basketball/navbar/basketball-navbar.component';
 import {RouterModule, Routes} from '@angular/router';
 import {SportTypesComponent} from './components/types/sport-types/sport-types.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PlayerComponent} from './components/search/player/player.component';
 import {TeamComponent} from './components/search/team/team.component';
 import {SearchComponent} from './components/search/search.component';
@@ -33,9 +33,11 @@ import {TeamsComponent} from './components/account/teams/teams.component';
 import {NavbarAccountComponent} from './components/account/navbar/navbar-account/navbar-account.component';
 import {AddTeamComponent} from './components/account/add-team/add-team.component';
 import { FavTeamDetailComponent } from './components/account/fav-team-detail/fav-team-detail.component';
+import { AddTeamOntComponent } from './components/account/add-team-ont/add-team-ont.component';
 
 
 const routes: Routes = [
+  {path: 'account/addTeamsOnt', component: AddTeamOntComponent, canActivate: [AuthGaurdService]},
   {path: 'account/favTeam/:id', component: FavTeamDetailComponent, canActivate: [AuthGaurdService]},
   {path: 'account/addTeam', component: AddTeamComponent, canActivate: [AuthGaurdService]},
   {path: 'account/teams', component: TeamsComponent, canActivate: [AuthGaurdService]},
@@ -87,21 +89,23 @@ const routes: Routes = [
     NavbarAccountComponent,
     AddTeamComponent,
     FavTeamDetailComponent,
+    AddTeamOntComponent,
   ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 5000,
-      positionClass: "toast-top-center",
-      preventDuplicates: true,
-      progressBar: true
+    imports: [
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            timeOut: 5000,
+            positionClass: "toast-top-center",
+            preventDuplicates: true,
+            progressBar: true
 
-    }),
-  ],
+        }),
+        ReactiveFormsModule,
+    ],
   providers: [BaskteballService, {
     provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true
   }],
