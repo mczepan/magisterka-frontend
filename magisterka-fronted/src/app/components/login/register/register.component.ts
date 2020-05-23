@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from "../../../services/authentication/authentication.service";
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -13,10 +13,12 @@ export class RegisterComponent implements OnInit {
 
   username = ''
   password = ''
-  email =''
+  email = ''
+
   constructor(private loginService: AuthenticationService,
               private router: Router,
-              private toastrService: ToastrService) { }
+              private toastrService: ToastrService) {
+  }
 
   ngOnInit(): void {
   }

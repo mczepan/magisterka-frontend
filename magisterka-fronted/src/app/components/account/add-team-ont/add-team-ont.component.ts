@@ -3,6 +3,7 @@ import {UserService} from "../../../services/user/user.service";
 import {SearchService} from "../../../services/search/search.service";
 import {Team} from "../../../common/types/team/team";
 import {ToastrService} from "ngx-toastr";
+import {delay} from 'rxjs/operators'
 
 @Component({
   selector: 'app-add-team-ont',
@@ -17,6 +18,8 @@ export class AddTeamOntComponent implements OnInit {
   hasChampion: string;
   hasStyle: string;
   hasValue: string;
+
+  clicksNumber: number = 0;
 
   displayResult: boolean = false;
   teams: Team[] = [];
@@ -40,6 +43,7 @@ export class AddTeamOntComponent implements OnInit {
         this.teams = data;
       }
     )
+    this.clicksNumber = this.clicksNumber + 1
     this.displayResult = true;
   }
 
@@ -62,6 +66,7 @@ export class AddTeamOntComponent implements OnInit {
     this.hasChampion = null
     this.hasStyle = null
     this.hasValue = null
+    this.displayResult = false;
   }
 
   invalidDataEntered() {

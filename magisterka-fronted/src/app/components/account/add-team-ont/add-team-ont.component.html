@@ -94,7 +94,7 @@
 
     <div class="container">
       <br>
-      <h4>National champion:</h4>
+      <h4>Style:</h4>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="style" value="Offensive" [(ngModel)]="hasStyle">
         <label class="form-check-label">
@@ -264,7 +264,7 @@
       </table>
     </ng-template>
     <ng-template #elseBlock>
-      <ng-container *ngIf="displayResult && teams?.length === 0; else  elsePart">{{invalidDataEntered()}}</ng-container>
+      <ng-container *ngIf="displayResult && teams?.length === 0 && clicksNumber > 1; else  elsePart">{{invalidDataEntered()}}</ng-container>
     </ng-template>
     <ng-template #elsePart></ng-template>
 
